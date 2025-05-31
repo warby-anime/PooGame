@@ -8,11 +8,15 @@ public:
 
 	void Draw ( Graphics& gfx ) const;
 	void update ( const Keyboard& kbd );
-	float ClampScreen ( float x , float y , float width , float height );
-	void getX () const;
-	void getY () const;
+	void ClampScreen (  );
+	float getX () const;
+	float getY () const;
+	float getWidth () const;
+	float getHeight () const;
+
 	
 private:
+	int health = 3;
 	float x = 400.f;
 	float y = 300.f;
 	float speed = 0.1f;

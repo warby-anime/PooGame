@@ -344,6 +344,52 @@ void Dude::update ( const Keyboard& kbd )
 	}
 }
 
+void Dude::ClampScreen (  )
+{
+	float right = x + width;
+	float bottom = y + height;
+
+	if ( x < 0 )
+	{
+		  x += 0.1f;
+	}
+	else if ( right >= Graphics::ScreenWidth )
+	{
+		x = ( Graphics::ScreenWidth - 0.1f ) - width;
+	}
+	else if ( y < 0 )
+	{
+		y += 0.1f;
+	}
+	else if ( bottom >= Graphics::ScreenHeight )
+	{
+		y = ( Graphics::ScreenHeight - 0.1f ) - height;
+
+	}
+	
+
+}
+
+float Dude::getX () const
+{
+	return x;
+}
+
+float Dude::getY () const
+{
+	return y;
+}
+
+float Dude::getWidth () const
+{
+	return width;
+}
+
+float Dude::getHeight () const
+{
+	return height;
+}
+
 
 
 

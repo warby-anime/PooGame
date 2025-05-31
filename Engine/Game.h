@@ -38,6 +38,7 @@ private:
 	void UpdateModel();
 	/********************************/
 	/*  User Functions              */
+	void DrawTitle ( int x , int y );
 	/********************************/
 private:
 	MainWindow& wnd;
@@ -46,6 +47,7 @@ private:
 	/*  User Variables              */
 	Dude dude;
 	Poo poo;
+	bool isStarted = false;
 	bool isEaten;
 	/********************************/
 };
