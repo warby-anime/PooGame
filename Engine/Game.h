@@ -25,6 +25,7 @@
 #include "Graphics.h"
 #include "Dude.h"
 #include "Poo.h"
+#include <random>
 
 class Game
 {
@@ -45,9 +46,15 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
+	std::random_device rd;
+	std::mt19937 rng;
+	std::uniform_real_distribution<float> xDist;
+	std::uniform_real_distribution<float> yDist;
+	std::uniform_real_distribution<float> vDist;
 	Dude dude;
-	Poo poo;
+	static constexpr int nPoo = 10;
+	Poo poos [nPoo];
 	bool isStarted = false;
-	bool isEaten;
+	bool isHit = false;
 	/********************************/
 };

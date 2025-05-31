@@ -6,13 +6,13 @@ class Dude
 {
 public:
 
-	void Draw ( Graphics& gfx ) const;
+	void Draw (  Graphics& gfx ) const;
 	void update ( const Keyboard& kbd );
 	void ClampScreen (  );
-	float getX () const;
-	float getY () const;
-	float getWidth () const;
-	float getHeight () const;
+	float GetX () const;
+	float GetY () const;
+	float GetWidth () const;
+	float GetHeight () const;
 
 	
 private:

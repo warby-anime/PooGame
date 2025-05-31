@@ -1,12 +1,14 @@
 #pragma once
 #include "Graphics.h"
+#include "Dude.h"
 
 class Poo
 {
 public:
-
-	void Draw ( Graphics& gfx );
-	float ClampScreen ( float x , float y , float width , float height );
+	void init ( float in_x , float in_y , float in_vx , float in_vy ) ;
+	void Draw (  Graphics& gfx ) const  ;
+	void ClampScreen ( );
+	bool isColliding (Dude& dude);
 	void getX () const;
 	void getY () const;
 private:

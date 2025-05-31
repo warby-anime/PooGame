@@ -24,10 +24,20 @@
 
 Game::Game( MainWindow& wnd )
 	:
-	wnd( wnd ),
-	gfx( wnd )
+	wnd ( wnd ) ,
+	gfx ( wnd ) ,
+	rng ( rd () ),
+	xDist ( 0 , 770 ) ,
+	yDist ( 0 , 570 ) ,
+	vDist ( 0.001f , 0.01f )
+	
 	
 {
+	for ( int i = 0; i < nPoo; i++ )
+	{
+		poos[i].init (xDist (rng) , yDist (rng) , vDist (rng) , vDist (rng));
+
+	}
 }
 
 void Game::Go()
@@ -44,10 +54,20 @@ void Game::UpdateModel()
 	{
 		isStarted = true;
 	}
-	else
+	if (isStarted && !isHit )
 	{
 		dude.update ( wnd.kbd );
-		dude.ClampScreen ( );
+		dude.ClampScreen ();
+		for ( int i = 0; i < nPoo; ++i )
+		{
+			poos[i].ClampScreen ();
+			if ( poos[i].isColliding(dude) )
+			{
+				isHit = true;
+			}
+
+		}
+		
 	
 	}
 }
@@ -26316,6 +26336,10 @@ void Game::ComposeFrame()
 	else
 	{
 		dude.Draw ( gfx );
+		for ( int i = 0; i < nPoo; ++i )
+		{
+		poos[i].Draw (gfx);
 
+		}
 	}
 }

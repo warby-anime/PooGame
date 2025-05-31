@@ -347,7 +347,6 @@ void Dude::update ( const Keyboard& kbd )
 void Dude::ClampScreen (  )
 {
 	float right = x + width;
-	float bottom = y + height;
 
 	if ( x < 0 )
 	{
@@ -357,7 +356,9 @@ void Dude::ClampScreen (  )
 	{
 		x = ( Graphics::ScreenWidth - 0.1f ) - width;
 	}
-	else if ( y < 0 )
+
+	float bottom = y + height;
+	 if ( y < 0 )
 	{
 		y += 0.1f;
 	}
@@ -370,22 +371,22 @@ void Dude::ClampScreen (  )
 
 }
 
-float Dude::getX () const
+float Dude::GetX () const
 {
 	return x;
 }
 
-float Dude::getY () const
+float Dude::GetY () const
 {
 	return y;
 }
 
-float Dude::getWidth () const
+float Dude::GetWidth () const
 {
 	return width;
 }
 
-float Dude::getHeight () const
+float Dude::GetHeight () const
 {
 	return height;
 }
