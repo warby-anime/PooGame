@@ -391,6 +391,11 @@ float Dude::GetHeight () const
 	return height;
 }
 
+int Dude::GetHealth () const
+{
+	return health;
+}
+
 
 
 

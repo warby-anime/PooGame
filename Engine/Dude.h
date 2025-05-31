@@ -13,10 +13,11 @@ public:
 	float GetY () const;
 	float GetWidth () const;
 	float GetHeight () const;
+	int GetHealth () const;
 
-	
+	// 408 = 1 hit
+	float health = 3.f;
 private:
-	int health = 3;
 	float x = 400.f;
 	float y = 300.f;
 	float speed = 0.1f;

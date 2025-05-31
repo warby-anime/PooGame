@@ -54,8 +54,9 @@ void Game::UpdateModel()
 	{
 		isStarted = true;
 	}
-	if (isStarted && !isHit )
+	else  if ( isStarted && !gameOver )
 	{
+
 		dude.update ( wnd.kbd );
 		dude.ClampScreen ();
 		for ( int i = 0; i < nPoo; ++i )
@@ -64,10 +65,21 @@ void Game::UpdateModel()
 			if ( poos[i].isColliding(dude) )
 			{
 				isHit = true;
+				
 			}
+				
 
 		}
 		
+		if ( isHit )
+		{//1.216
+			dude.health -= 0.00242f;
+			isHit = false;
+		}
+		if ( dude.health <= 0 )
+		{
+			gameOver = true;
+		}
 	
 	}
 }

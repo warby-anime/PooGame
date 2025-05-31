@@ -284,10 +284,10 @@ bool Poo::isColliding (Dude& dude)
 	float dudeBottom = dude.GetY () + dude.GetHeight ();
 
 	return
-		x >= dudeRight &&
-		right <= dude.GetX () &&
-		y >= dudeBottom &&
-		bottom <= dude.GetY ();
+		x <= dudeRight &&
+		right >= dude.GetX () &&
+		y <= dudeBottom &&
+		bottom >= dude.GetY ();
 }
 
 
