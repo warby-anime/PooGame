@@ -15,7 +15,7 @@ public:
 	float GetHeight () const;
 	int GetHealth () const;
 
-	// 408 = 1 hit
+	// 1.0237 = 1 health
 	float health = 3.f;
 private:
 	float x = 400.f;

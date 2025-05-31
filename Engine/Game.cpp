@@ -29,10 +29,15 @@ Game::Game( MainWindow& wnd )
 	rng ( rd () ),
 	xDist ( 0 , 770 ) ,
 	yDist ( 0 , 570 ) ,
-	vDist ( 0.001f , 0.01f )
+	vDist ( 0.001f , 0.01f ),
+	xDistGoal ( 0 , 700 ) ,
+	yDistGoal ( 0 , 500 )
 	
 	
 {
+	goal.init ( xDistGoal ( rng ) , yDistGoal ( rng ) );
+
+
 	for ( int i = 0; i < nPoo; i++ )
 	{
 		poos[i].init (xDist (rng) , yDist (rng) , vDist (rng) , vDist (rng));
@@ -56,9 +61,22 @@ void Game::UpdateModel()
 	}
 	else  if ( isStarted && !gameOver )
 	{
-
 		dude.update ( wnd.kbd );
 		dude.ClampScreen ();
+
+		if ( goal.isGoalTouched ( dude ) )
+		{
+			isGoalTouched = true;
+			goal.init ( xDistGoal ( rng ) , yDistGoal ( rng ) );
+
+		}
+		else
+		{
+			isGoalTouched = false;
+
+		}
+		
+		
 		for ( int i = 0; i < nPoo; ++i )
 		{
 			poos[i].ClampScreen ();
@@ -67,12 +85,9 @@ void Game::UpdateModel()
 				isHit = true;
 				
 			}
-				
-
 		}
-		
 		if ( isHit )
-		{//1.216
+		{// takes 1.0237 off dude
 			dude.health -= 0.00242f;
 			isHit = false;
 		}
@@ -26347,6 +26362,12 @@ void Game::ComposeFrame()
 	}
 	else
 	{
+
+		if ( !isGoalTouched )
+		{
+			goal.Draw ( gfx );
+			
+		}
 		dude.Draw ( gfx );
 		for ( int i = 0; i < nPoo; ++i )
 		{

@@ -25,6 +25,7 @@
 #include "Graphics.h"
 #include "Dude.h"
 #include "Poo.h"
+#include "Goal.h"
 #include <random>
 
 class Game
@@ -51,11 +52,15 @@ private:
 	std::uniform_real_distribution<float> xDist;
 	std::uniform_real_distribution<float> yDist;
 	std::uniform_real_distribution<float> vDist;
+	std::uniform_int_distribution<int> xDistGoal;
+	std::uniform_int_distribution<int> yDistGoal;
 	Dude dude;
 	static constexpr int nPoo = 10;
 	Poo poos [nPoo];
+	Goal goal;
 	bool isStarted = false;
 	bool isHit = false;
+	bool isGoalTouched = false;
 	bool gameOver = false;
 	/********************************/
 };
