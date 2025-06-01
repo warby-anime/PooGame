@@ -9,7 +9,8 @@ public:
 	void Draw (  Graphics& gfx ) const  ;
 	void ClampScreen ( );
 	bool isColliding (Dude& dude);
-	bool speedUpPoo ();
+	bool speedUpPooX ();
+	bool speedUpPooY ();
 	void getX () const;
 	void getY () const;
 private:

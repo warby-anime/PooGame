@@ -22,6 +22,7 @@
 #include "Game.h"
 
 
+
 Game::Game( MainWindow& wnd )
 	:
 	wnd ( wnd ) ,
@@ -71,7 +72,8 @@ void Game::UpdateModel()
 			score.scoreUp ();
 			for ( int i = 0; i < nPoo; i++ )
 			{
-				poos [i].speedUpPoo ();
+				poos [i].speedUpPooX ();
+				poos [i].speedUpPooY ();
 			}
 		}
 		else
@@ -28469,11 +28471,15 @@ void Game::ComposeFrame()
 		}
 		score.draw ( gfx );
 		dude.Draw ( gfx );
-		for ( int i = 0; i < nPoo; ++i )
-		{
-		poos[i].Draw (gfx);
 
-		}
+			for ( int i = 0; i < nPoo; ++i )
+			{
+				poos [i].Draw ( gfx );
+			}
+		
+
+			
+		
 	}
 	
 

@@ -290,10 +290,15 @@ bool Poo::isColliding (Dude& dude)
 		bottom >= dude.GetY ();
 }
 
-bool Poo::speedUpPoo ()
+bool Poo::speedUpPooX ()
 {
 	return vx *= 1.1f;
-		   vy *= 1.1f;
+		   
+}
+
+bool Poo::speedUpPooY ()
+{
+	return vy *= 1.1f;
 }
 
 
