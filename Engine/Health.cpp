@@ -12,7 +12,27 @@ void Health::DrawHealth ( Graphics& gfx )
 	}
 }
 
-bool Health::healthDown ()
+bool Health::healthDown (Dude& dude)
 {
-	return width -= 10;
+	    if ( dude.health > 2 )
+	    {
+	    	width = 30;
+			
+	    }
+		if ( dude.health > 1.3f )
+		{
+			width = 20;
+		}
+		if ( dude.health < 1.2f )
+		{
+			width = 10;
+		}
+		if ( dude.health <= 0 )
+		{
+			width = 0;
+		}
+		
+	 return width;
+	
+	
 }

@@ -16,7 +16,7 @@ public:
 	int GetHealth () const;
 
 	// 1.0237 = 1 health
-	float health = 3.f;
+	float health = 3.0711f;
 private:
 	float x = 400.f;
 	float y = 300.f;

@@ -1,11 +1,12 @@
 #pragma once
 #include"Graphics.h"
+#include "Dude.h"
 
 class Health
 {
 public:
 	void DrawHealth ( Graphics& gfx );
-	bool healthDown ();
+	bool healthDown (Dude& dude);
 private:
 	int xpos = 0;
 	int ypos = 20;

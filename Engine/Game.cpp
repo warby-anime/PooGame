@@ -87,17 +87,10 @@ void Game::UpdateModel()
 			if ( poos[i].isColliding(dude) )
 			{
 				isHit = true;
-				
+				// takes 1.0237 off dude
+				dude.health -= 0.00242f;
+				health.healthDown (dude);
 			}
-		}
-		if ( isHit )
-		{// takes 1.0237 off dude
-			dude.health -= 0.00242f;
-			
-		}
-		else
-		{
-			isHit = false;
 		}
 		if ( dude.health <= 0 )
 		{
