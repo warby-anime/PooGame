@@ -70,6 +70,13 @@ void Game::UpdateModel()
 			isGoalTouched = true;
 			goal.init ( xDistGoal ( rng ) , yDistGoal ( rng ) );
 			score.scoreUp ();
+			if (  nPoo < maxPoo )
+			{
+				poos [nPoo].init ( xDist ( rng ) , yDist ( rng ) , vDist ( rng ) , vDist ( rng ) );
+
+				++nPoo;
+				isGoalTouched = false;
+			}
 			for ( int i = 0; i < nPoo; i++ )
 			{
 				poos [i].speedUpPooX ();
@@ -86,6 +93,7 @@ void Game::UpdateModel()
 		for ( int i = 0; i < nPoo; ++i )
 		{
 			poos[i].ClampScreen ();
+
 			if ( poos[i].isColliding(dude) )
 			{
 				isHit = true;
@@ -28472,12 +28480,14 @@ void Game::ComposeFrame()
 		score.draw ( gfx );
 		dude.Draw ( gfx );
 
+		
+
 			for ( int i = 0; i < nPoo; ++i )
 			{
 				poos [i].Draw ( gfx );
 			}
 		
-
+		
 			
 		
 	}

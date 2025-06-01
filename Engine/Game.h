@@ -59,8 +59,9 @@ private:
 	std::uniform_int_distribution<int> yDistGoal;
 	Dude dude;
 	Health health;
-	static constexpr int nPoo = 10;
-	Poo poos [nPoo];
+	static constexpr int maxPoo = 10;
+	int nPoo = 0;
+	Poo poos [maxPoo];
 	Goal goal;
 	Score score;
 	bool isStarted = false;
