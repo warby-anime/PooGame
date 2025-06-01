@@ -9,9 +9,9 @@ public:
 	bool healthDown (Dude& dude);
 private:
 	int xpos = 0;
-	int ypos = 20;
+	int ypos = 0;
 	Color c = Colors::Red;
-	int width = 30;
-	static constexpr int height = 40;
+	int width = 800;
+	static constexpr int height = 20;
 };
 

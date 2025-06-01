@@ -14,20 +14,20 @@ void Health::DrawHealth ( Graphics& gfx )
 
 bool Health::healthDown (Dude& dude)
 {
-	    if ( dude.health > 2 )
+	    if ( dude.GetHealth() > 2 )
 	    {
-	    	width = 30;
+	    	width = 800;
 			
 	    }
-		if ( dude.health > 1.3f )
+		if ( dude.GetHealth() > 1.3f )
 		{
-			width = 20;
+			width = 534;
 		}
-		if ( dude.health < 1.2f )
+		if ( dude.GetHealth() < 1.2f )
 		{
-			width = 10;
+			width = 260;
 		}
-		if ( dude.health <= 0 )
+		if ( dude.GetHealth() <= 0 )
 		{
 			width = 0;
 		}

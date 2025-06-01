@@ -359,7 +359,7 @@ void Dude::ClampScreen (  )
 	}
 
 	float bottom = y + height;
-	 if ( y < 0 )
+	 if ( y < 40 )
 	{
 		y += 0.1f;
 	}
@@ -392,9 +392,15 @@ float Dude::GetHeight () const
 	return height;
 }
 
-int Dude::GetHealth () const
+float Dude::GetHealth () const
 {
 	return health;
+}
+
+float Dude::SetHealth ( )
+{
+	
+	return health -= 0.00242f;
 }
 
 

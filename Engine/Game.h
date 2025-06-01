@@ -60,7 +60,7 @@ private:
 	Dude dude;
 	Health health;
 	static constexpr int maxPoo = 10;
-	int nPoo = 0;
+	int nPoo = 1;
 	Poo poos [maxPoo];
 	Goal goal;
 	Score score;

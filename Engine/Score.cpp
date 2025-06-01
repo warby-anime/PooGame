@@ -14,5 +14,13 @@ void Score::draw ( Graphics& gfx ) const
 
 bool Score::scoreUp () 
 {
-	return width += 10;
+	return width += 40;
+}
+
+int Score::scoreMax () const
+{
+	
+		return width;
+	
+	
 }

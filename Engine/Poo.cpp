@@ -263,7 +263,7 @@ void Poo::ClampScreen ( )
 	}
 
 	float bottom = y + height;
-	if ( y < 0 )
+	if ( y < 40 )
 	{
 		y += 0.1f;
 		vy = -vy;
@@ -292,13 +292,13 @@ bool Poo::isColliding (Dude& dude)
 
 bool Poo::speedUpPooX ()
 {
-	return vx *= 1.1f;
+	return vx *= 1.2f;
 		   
 }
 
 bool Poo::speedUpPooY ()
 {
-	return vy *= 1.1f;
+	return vy *= 1.2f;
 }
 
 

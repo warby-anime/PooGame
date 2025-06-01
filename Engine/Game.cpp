@@ -29,10 +29,10 @@ Game::Game( MainWindow& wnd )
 	gfx ( wnd ) ,
 	rng ( rd () ),
 	xDist ( 0 , 770 ) ,
-	yDist ( 0 , 570 ) ,
-	vDist ( 0.001f , 0.01f ),
+	yDist ( 40 , 570 ) ,
+	vDist ( 0.008f , 0.03f ),
 	xDistGoal ( 0 , 700 ) ,
-	yDistGoal ( 0 , 500 )
+	yDistGoal ( 40 , 500 )
 	
 	
 {
@@ -98,13 +98,18 @@ void Game::UpdateModel()
 			{
 				isHit = true;
 				// takes 1.0237 off dude
-				dude.health -= 0.00242f;
+				dude.SetHealth ();
 				health.healthDown (dude);
 			}
 		}
-		if ( dude.health <= 0 )
+		if ( dude.GetHealth () <= 0 )
 		{
 			gameOver = true;
+		}
+		if ( score.scoreMax () ==  Graphics::ScreenWidth  )
+		{
+			gameOver = true;
+
 		}
 	
 	}
@@ -28461,7 +28466,7 @@ void Game::DrawGameOver ( int x , int y )
 void Game::ComposeFrame()
 {
 	if ( !isStarted )
-	{
+	{ 
 		DrawTitle (330,220);
 	}
 	else

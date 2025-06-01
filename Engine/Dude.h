@@ -13,11 +13,12 @@ public:
 	float GetY () const;
 	float GetWidth () const;
 	float GetHeight () const;
-	int GetHealth () const;
+	float GetHealth () const;
+	float SetHealth ( );
 
 	// 1.0237 = 1 health
-	float health = 3.0711f;
 private:
+	float health = 3.0711f;
 	float x = 400.f;
 	float y = 300.f;
 	float speed = 0.1f;
