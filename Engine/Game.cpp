@@ -68,7 +68,11 @@ void Game::UpdateModel()
 		{
 			isGoalTouched = true;
 			goal.init ( xDistGoal ( rng ) , yDistGoal ( rng ) );
-
+			score.scoreUp ();
+			for ( int i = 0; i < nPoo; i++ )
+			{
+				poos [i].speedUpPoo ();
+			}
 		}
 		else
 		{
@@ -26368,6 +26372,7 @@ void Game::ComposeFrame()
 			goal.Draw ( gfx );
 			
 		}
+		score.draw ( gfx );
 		dude.Draw ( gfx );
 		for ( int i = 0; i < nPoo; ++i )
 		{
