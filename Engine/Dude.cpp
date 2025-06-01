@@ -324,6 +324,7 @@ void Dude::Draw ( Graphics& gfx ) const
 
 }
 
+
 void Dude::update ( const Keyboard& kbd )
 {
 	if ( kbd.KeyIsPressed ( VK_RIGHT ) )

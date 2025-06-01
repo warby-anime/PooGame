@@ -24,6 +24,7 @@
 #include "Mouse.h"
 #include "Graphics.h"
 #include "Dude.h"
+#include "Health.h"
 #include "Poo.h"
 #include "Goal.h"
 #include"Score.h"
@@ -42,6 +43,7 @@ private:
 	/********************************/
 	/*  User Functions              */
 	void DrawTitle ( int x , int y );
+	void DrawGameOver ( int x , int y );
 	/********************************/
 private:
 	MainWindow& wnd;
@@ -56,6 +58,7 @@ private:
 	std::uniform_int_distribution<int> xDistGoal;
 	std::uniform_int_distribution<int> yDistGoal;
 	Dude dude;
+	Health health;
 	static constexpr int nPoo = 10;
 	Poo poos [nPoo];
 	Goal goal;
