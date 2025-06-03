@@ -64,9 +64,11 @@ private:
 	Poo poos [maxPoo];
 	Goal goal;
 	Score score;
+	int invulFrames = 0;
+	const int maxInvulFrames = 600;
 	bool isStarted = false;
-	bool isHit = false;
-	bool isGoalTouched = false;
+	bool IsInvulnerable () const;
+	bool IsGoalTouched = false;
 	bool gameOver = false;
 	/********************************/
 };

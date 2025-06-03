@@ -17,7 +17,7 @@ void Goal::Draw ( Graphics& gfx ) const
 	}
 }
 
-bool Goal::isGoalTouched ( Dude& dude )
+bool Goal::IsGoalTouched ( Dude& dude )
 {
 	float right = xpos + width;
 	float bottom = ypos + height;

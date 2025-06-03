@@ -276,27 +276,27 @@ void Poo::ClampScreen ( )
 	}
 }
 
-bool Poo::isColliding (Dude& dude)
+bool Poo::IsColliding (Dude& dude)
 {
 	float right = x + width;
 	float bottom = y + height;
 	float dudeRight = dude.GetX () + dude.GetWidth ();
 	float dudeBottom = dude.GetY () + dude.GetHeight ();
 
-	return
+		return 
 		x <= dudeRight &&
 		right >= dude.GetX () &&
 		y <= dudeBottom &&
 		bottom >= dude.GetY ();
 }
 
-bool Poo::speedUpPooX ()
+bool Poo::SpeedUpPooX ()
 {
 	return vx *= 1.2f;
 		   
 }
 
-bool Poo::speedUpPooY ()
+bool Poo::SpeedUpPooY ()
 {
 	return vy *= 1.2f;
 }

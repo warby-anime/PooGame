@@ -1,6 +1,6 @@
 #include "Score.h"
 
-void Score::draw ( Graphics& gfx ) const
+void Score::Draw ( Graphics& gfx ) const
 {
 	for ( int y = ypos; y < ypos + height; y++ )
 	{
@@ -12,7 +12,7 @@ void Score::draw ( Graphics& gfx ) const
 	}
 }
 
-bool Score::scoreUp () 
+bool Score::ScoreUp () 
 {
 	return width += 40;
 }

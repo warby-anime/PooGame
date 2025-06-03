@@ -7,21 +7,22 @@ class Dude
 public:
 
 	void Draw (  Graphics& gfx ) const;
-	void update ( const Keyboard& kbd );
+	void Update ( const Keyboard& kbd );
 	void ClampScreen (  );
 	float GetX () const;
 	float GetY () const;
 	float GetWidth () const;
 	float GetHeight () const;
-	float GetHealth () const;
-	float SetHealth ( );
+	int GetHealth () const;
+	int SetHealth ( );
 
 	// 1.0237 = 1 health
 private:
-	float health = 3.0711f;
+	int health = 3;
 	float x = 400.f;
 	float y = 300.f;
 	float speed = 0.1f;
+	
 	static constexpr float width = 20;
 	static constexpr float height = 20;
 };

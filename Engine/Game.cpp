@@ -62,46 +62,54 @@ void Game::UpdateModel()
 	}
 	else  if ( isStarted && !gameOver )
 	{
-		dude.update ( wnd.kbd );
+		dude.Update ( wnd.kbd );
 		dude.ClampScreen ();
 
-		if ( goal.isGoalTouched ( dude ) )
+		
+		if ( goal.IsGoalTouched ( dude ) )
 		{
-			isGoalTouched = true;
+			IsGoalTouched = true;
 			goal.init ( xDistGoal ( rng ) , yDistGoal ( rng ) );
-			score.scoreUp ();
+			score.ScoreUp ();
 			if (  nPoo < maxPoo )
 			{
 				poos [nPoo].init ( xDist ( rng ) , yDist ( rng ) , vDist ( rng ) , vDist ( rng ) );
 
 				++nPoo;
-				isGoalTouched = false;
+				IsGoalTouched = false;
 			}
 			for ( int i = 0; i < nPoo; i++ )
 			{
-				poos [i].speedUpPooX ();
-				poos [i].speedUpPooY ();
+				poos [i].SpeedUpPooX ();
+				poos [i].SpeedUpPooY ();
 			}
 		}
 		else
 		{
-			isGoalTouched = false;
+			IsGoalTouched = false;
 
 		}
-		
+		if (invulFrames > 0)
+		{
+			--invulFrames;
+		}
 		
 		for ( int i = 0; i < nPoo; ++i )
 		{
 			poos[i].ClampScreen ();
 
-			if ( poos[i].isColliding(dude) )
+			if (poos[i].IsColliding (dude) && !IsInvulnerable ())
 			{
-				isHit = true;
-				// takes 1.0237 off dude
-				dude.SetHealth ();
-				health.healthDown (dude);
+				
+				
+					dude.SetHealth ();
+					health.HealthDown (dude);
+					invulFrames = maxInvulFrames;
+
+			
 			}
 		}
+				// takes 1.0237 off dude
 		if ( dude.GetHealth () <= 0 )
 		{
 			gameOver = true;
@@ -28463,6 +28471,11 @@ void Game::DrawGameOver ( int x , int y )
 
 }
 
+bool Game::IsInvulnerable () const
+{
+	return invulFrames > 0;
+}
+
 void Game::ComposeFrame()
 {
 	if ( !isStarted )
@@ -28477,12 +28490,12 @@ void Game::ComposeFrame()
 		}
 			health.DrawHealth ( gfx );
 
-		if ( !isGoalTouched )
+		if ( !IsGoalTouched )
 		{
 			goal.Draw ( gfx );
 			
 		}
-		score.draw ( gfx );
+		score.Draw ( gfx );
 		dude.Draw ( gfx );
 
 		
