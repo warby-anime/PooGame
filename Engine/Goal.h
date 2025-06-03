@@ -7,7 +7,7 @@ class Goal
 public:
 	void init ( int in_x , int in_y );
 	void Draw ( Graphics& gfx ) const;
-	bool isGoalTouched (Dude& dude);
+	bool IsGoalTouched (Dude& dude);
 
 
 private:

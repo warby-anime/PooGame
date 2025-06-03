@@ -6,7 +6,7 @@ class Health
 {
 public:
 	void DrawHealth ( Graphics& gfx );
-	bool healthDown (Dude& dude);
+	bool HealthDown (Dude& dude);
 private:
 	int xpos = 0;
 	int ypos = 0;

@@ -325,7 +325,7 @@ void Dude::Draw ( Graphics& gfx ) const
 }
 
 
-void Dude::update ( const Keyboard& kbd )
+void Dude::Update ( const Keyboard& kbd )
 {
 	if ( kbd.KeyIsPressed ( VK_RIGHT ) )
 	{
@@ -392,15 +392,15 @@ float Dude::GetHeight () const
 	return height;
 }
 
-float Dude::GetHealth () const
+int Dude::GetHealth () const
 {
 	return health;
 }
 
-float Dude::SetHealth ( )
+int Dude::SetHealth ( )
 {
 	
-	return health -= 0.00242f;
+	return health -= 1;
 }
 
 

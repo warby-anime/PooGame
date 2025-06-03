@@ -12,7 +12,7 @@ void Health::DrawHealth ( Graphics& gfx )
 	}
 }
 
-bool Health::healthDown (Dude& dude)
+bool Health::HealthDown (Dude& dude)
 {
 	    if ( dude.GetHealth() > 2 )
 	    {

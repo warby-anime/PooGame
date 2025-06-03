@@ -4,8 +4,8 @@
 class Score
 {
 public:
-	void draw ( Graphics& gfx ) const;
-	bool scoreUp ();
+	void Draw ( Graphics& gfx ) const;
+	bool ScoreUp ();
 	int scoreMax () const;
 
 
